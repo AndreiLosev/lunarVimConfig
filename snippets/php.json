@@ -1,0 +1,9 @@
+{
+    "phpdoc": {
+        "prefix": "/**",
+        "body": [
+            "/** \n * ${0} \n */"
+        ],
+        "description": "phpdoc"
+    }
+}

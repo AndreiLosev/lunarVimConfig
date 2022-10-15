@@ -1,0 +1,49 @@
+lvim.keys.normal_mode["<F5>"] = "<Cmd>:lua require('dap.ext.vscode').load_launchjs() require'dap'.continue()<CR>"
+-- lvim.keys.normal_mode["<F5>"] = "<Cmd>:lua require'dap'.continue()<CR>"
+lvim.keys.normal_mode["<F9>"] = "<Cmd>:lua require'dap'.step_over()<CR>"
+lvim.keys.normal_mode["<F10>"] = "<Cmd>:lua require'dap'.step_into()<CR>"
+lvim.keys.normal_mode[";"] = "<Cmd>:wincmd w<CR>"
+lvim.builtin.which_key.mappings["dw"] = {
+    "<cmd>:lua require'dapui'.toggle()<CR>", "Debug Windows toggle"
+}
+lvim.builtin.which_key.mappings["dg"] = {
+    "<cmd>:lua require('dapui').float_element('watches')<CR>", "Debug Watches window"
+}
+lvim.builtin.which_key.mappings["df"] = {
+    "<cmd>:lua require('dapui').float_element('breakpoints')<CR>", "Debug Breakpoints window"
+}
+lvim.builtin.which_key.mappings["ds"] = {
+    "<cmd>:lua require('dapui').float_element('scopes')<CR>", "Debug Scopes window"
+}
+lvim.builtin.which_key.mappings["dv"] = {
+    "<cmd>:lua require('dapui').float_element('stacks')<CR>", "Debug Stacks window"
+}
+lvim.builtin.which_key.mappings["dr"] = {
+    "<cmd>:lua require('dapui').float_element('repl')<CR>", "Debug Repl window"
+}
+lvim.builtin.which_key.mappings['dt'] = {
+    "<cmd>:lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoint"
+}
+lvim.builtin.which_key.mappings["de"] = {
+    "<cmd>:lua require'dapui'.eval()<CR>", "Eval"
+}
+-- lvim.builtin.which_key.mappings["dd"] = {
+--     "<cmd>:require('dap').terminate()", "DapTerminate"
+-- }
+lvim.builtin.which_key.mappings['gt'] = {
+    "<cmd> :BlamerToggle <CR>", "Show git in line"
+}
+lvim.builtin.which_key.mappings["r"] = {
+    name = "http client",
+    s = { "<cmd>lua require('rest-nvim').run()<CR>", "Send request" },
+}
+
+lvim.builtin.which_key.mappings["m"] = {
+    name = "MergeTool",
+    l = { "<cmd>lua require('diffview.actions').conflict_choose('ours')<CR>", "Local" },
+    r = { "<cmd>lua require('diffview.actions').conflict_choose('theirs')<CR>", "Remote" },
+    b = { "<cmd>lua require('diffview.actions').conflict_choose('base')<CR>", "base" },
+    a = { "<cmd>lua require('diffview.actions').conflict_choose('all')<CR>", "All" },
+    n = { "<cmd>lua require('diffview.actions').conflict_choose('none')<CR>", "None" },
+    c = { "<cmd> DiffviewClose <CR>", "DiffviewClose" },
+}

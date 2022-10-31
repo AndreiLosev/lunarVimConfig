@@ -1,7 +1,8 @@
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.encoding = 'utf-8'
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
+vim.opt.relativenumber = true
 vim.opt.fileencoding = 'utf-8'
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.dap.active = true
@@ -10,7 +11,7 @@ lvim.builtin.nvimtree.setup.view.width = 40
 lvim.builtin.dap.active = true
 lvim.log.level = "warn"
 lvim.format_on_save = false;
-lvim.colorscheme = 'myaurora'
+lvim.colorscheme = 'nvcode1'
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.builtin.alpha.active = true
@@ -37,5 +38,3 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
-
-

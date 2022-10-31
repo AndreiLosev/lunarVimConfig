@@ -47,3 +47,7 @@ lvim.builtin.which_key.mappings["m"] = {
     n = { "<cmd>lua require('diffview.actions').conflict_choose('none')<CR>", "None" },
     c = { "<cmd> DiffviewClose <CR>", "DiffviewClose" },
 }
+
+lvim.builtin.which_key.mappings["sq"] = {
+    "<cmd>Telescope buffers<cr>", "search from buffers"
+}

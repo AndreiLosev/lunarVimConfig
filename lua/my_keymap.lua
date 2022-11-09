@@ -46,6 +46,10 @@ lvim.builtin.which_key.mappings["m"] = {
     a = { "<cmd>lua require('diffview.actions').conflict_choose('all')<CR>", "All" },
     n = { "<cmd>lua require('diffview.actions').conflict_choose('none')<CR>", "None" },
     c = { "<cmd> DiffviewClose <CR>", "DiffviewClose" },
+    h = { "<cmd> DiffviewFileHistory % <CR>", "Current File History" },
+    C = { ":vert diffsplit", "Сompare current file with ..." },
+    o = { "<cmd>: DiffviewOpen <CR>", "Show modified files" },
+    O = { ": DiffviewOpen", "compare with {{ commit }}" },
 }
 
 lvim.builtin.which_key.mappings["sq"] = {

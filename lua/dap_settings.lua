@@ -52,7 +52,7 @@ dap.configurations.rust = {
         --         kind = "bin"
         --     },
         -- },
-        program = "${workspaceFolder}/target/debug/web_soket",
+        program = "${workspaceFolder}/target/debug/roman_to_integer",
         args = {},
         cwd = "${workspaceFolder}"
     }

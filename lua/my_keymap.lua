@@ -55,3 +55,6 @@ lvim.builtin.which_key.mappings["m"] = {
 lvim.builtin.which_key.mappings["sq"] = {
     "<cmd>Telescope buffers<cr>", "search from buffers"
 }
+lvim.builtin.which_key.mappings["a"] = {
+    "<cmd>:lua GetPhpClassName()<CR>", "Get class name"
+}

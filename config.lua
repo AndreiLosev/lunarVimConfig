@@ -1,5 +1,4 @@
 -- Additional Plugins
-
 lvim.plugins = {
     {
         "windwp/nvim-ts-autotag",
@@ -102,7 +101,7 @@ require("indent_blankline").setup {
     show_current_context_start = false,
 }
 require("lsp_signature").setup({})
-
+require("php_class_name")
 -- general
 
 -- to disable icons and use a minimalist setup, uncomment the following

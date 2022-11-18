@@ -45,7 +45,7 @@ GetPhpClassName = function ()
         :gsub('.php', '')
         :sub(2)
 
-    vim.api.nvim_set_current_line(vim.api.nvim_get_current_line() .. class_name)
+    vim.api.nvim_set_current_line(vim.api.nvim_get_current_line() .. ' ' .. class_name)
     -- print(class_name)
     -- return class_name
 end

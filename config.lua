@@ -11,7 +11,6 @@ lvim.plugins = {
         "folke/trouble.nvim",
         cmd = "TroubleToggle",
     },
-    { "rcarriga/nvim-dap-ui" },
     { "NTBBloodbath/rest.nvim" },
     { "christianchiarulli/nvcode-color-schemes.vim" },
     { "lukas-reineke/indent-blankline.nvim" },

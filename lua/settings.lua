@@ -11,7 +11,7 @@ lvim.builtin.nvimtree.setup.view.width = 40
 lvim.builtin.dap.active = true
 lvim.log.level = "warn"
 lvim.format_on_save = false;
-lvim.colorscheme = 'nvcode1'
+lvim.colorscheme = 'lunar'
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.builtin.alpha.active = true
@@ -37,3 +37,5 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+vim.opt.timeoutlen = 500
+lvim.builtin.which_key.setup.plugins.marks = true;

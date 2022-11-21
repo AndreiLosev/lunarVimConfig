@@ -83,7 +83,6 @@ lvim.plugins = {
         ft = { "rust", "rs" },
     },
 }
-vim.g.material_style = "darker"
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 require("lualine1")
@@ -94,12 +93,12 @@ require("dap1")
 require("dapui1")
 require("rest_nvim1")
 require("null_ls_formatters")
-
 require("indent_blankline").setup {
     show_current_context = true,
     show_current_context_start = false,
 }
 require("lsp_signature").setup({})
+require("telescop1")
 require("php_class_name")
 -- general
 

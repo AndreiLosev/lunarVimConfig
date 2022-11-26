@@ -5,20 +5,24 @@ lvim.builtin.telescope.on_config_done = function ()
     end
 
     local opts = {
+        defaults = {
+            file_ignore_patterns = { "%.png", "%.jpg", "%.jpeg", "%.map" },
+        },
         pickers = {
             find_files = {
-                theme = "dropdown",
-                hidden = true,
-                previewer = false,
+                -- previewer = false,
+                only_sort_text = true,
+                layout_strategy = 'horizontal',
+                layout_config = { width = 0.75 }
             },
             live_grep = {
                 only_sort_text = true,
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.90 }
+                layout_config = { width = 0.75 },
             },
             buffers = {
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.90 },
+                layout_config = { width = 0.75 },
                 initial_mode = "normal",
                 mappings = {
                     i = {
@@ -34,10 +38,10 @@ lvim.builtin.telescope.on_config_done = function ()
               show_moon = true,
             },
             git_files = {
-              theme = "dropdown",
-              hidden = true,
-              previewer = false,
-              show_untracked = true,
+                -- previewer = false,
+                only_sort_text = true,
+                layout_strategy = 'horizontal',
+                layout_config = { width = 0.75 }
             },
             lsp_references = {
               theme = "dropdown",
@@ -55,7 +59,7 @@ lvim.builtin.telescope.on_config_done = function ()
               theme = "dropdown",
               initial_mode = "normal",
             },
-          }
+        },
     }
     require("telescope").setup(opts)
 end

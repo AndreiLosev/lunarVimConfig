@@ -1,5 +1,7 @@
 local dap = require("dap")
 
+lvim.builtin.dap.breakpoint.text = ""
+ 
 dap.configurations.php = {
     -- {
     --     name = "Listen for Xdebug from lua",

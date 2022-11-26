@@ -2,8 +2,6 @@ lvim.builtin.dap.ui.config.layouts = {
     {
         elements = {
           { id = "scopes", size = 0.65 },
-          -- { id = "breakpoints", size = 0.17 },
-          -- { id = "stacks", size = 0.25 },
           { id = "watches", size = 0.35 },
         },
         size = 0.33,
@@ -11,14 +9,48 @@ lvim.builtin.dap.ui.config.layouts = {
     },
     {
         elements = {
-          -- { id = "repl", size = 0.45 },
-          -- { id = "console", size = 0.55 },
         },
             size = 0.27,
             position = "bottom",
     },
 }
 
+lvim.builtin.dap.ui.config.floating = {
+    max_height = nil, -- These can be integers or a float between 0 and 1.
+    max_width = nil, -- Floats will be treated as percentage of your screen.
+    border = "single", -- Border style. Can be "single", "double" or "rounded"
+    mappings = {
+        close = { "q", "<Esc>" },
+    },
+}
+
+lvim.builtin.breadcrumbs.winbar_filetype_exclude = {
+    "help",
+	"startify",
+	"dashboard",
+	"packer",
+	"neo-tree",
+	"neogitstatus",
+	"NvimTree",
+	"Trouble",
+	"alpha",
+	"lir",
+	"Outline",
+	"spectre_panel",
+	"toggleterm",
+	"DressingSelect",
+	"Jaq",
+	"harpoon",
+	"dap-repl",
+	"dap-terminal",
+	"dapui_console",
+	"lab",
+	"Markdown",
+	"notify",
+	"noice",
+	"",
+    "dapui_hover",
+}
 -- dapui.setup({
 --     icons = { expanded = "▾", collapsed = "▸" },
 --     mappings = {

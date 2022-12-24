@@ -18,7 +18,30 @@ local read_all = function (file)
     return content
 end
 
-GetPhpClassName = function ()
+local inser_text = function (text)
+  local pos = vim.api.nvim_win_get_cursor(0)[2]
+  local line = vim.api.nvim_get_current_line()
+  local nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
+  vim.api.nvim_set_current_line(nline)
+end
+
+local get_classname = function (full_name)
+    local revers = full_name:reverse()
+    local pos = revers:find("\\")
+    local class_name = revers:sub(0, pos - 1);
+    return class_name:reverse()
+end
+
+local get_namespace = function (full_name)
+    local revers = full_name:reverse()
+    local pos = revers:find("\\")
+    local namespace = revers:sub(pos + 1);
+    return namespace:reverse()
+end
+
+
+
+local get_php_full_class_name = function ()
     local cwd =  vim.fn.getcwd()
     local file = vim.api.nvim_buf_get_name(0)
     local cwd_len = cwd:len()
@@ -39,13 +62,44 @@ GetPhpClassName = function ()
         a_value = value
     end
 
-    local class_name = file_from_path
+    local full_name = file_from_path
         :gsub(a_value, a_key)
         :gsub('/', '\\')
         :gsub('.php', '')
         :sub(2)
 
-    vim.api.nvim_set_current_line(vim.api.nvim_get_current_line() .. ' ' .. class_name)
-    -- print(class_name)
-    -- return class_name
+    return full_name
+end
+
+GetPhpClassName = function ()
+    local full_name = get_php_full_class_name();
+    local class_name = get_classname(full_name);
+    inser_text(class_name)
+end
+
+GetPhpNameSpace = function ()
+    local full_name = get_php_full_class_name();
+    local namespace = 'namespace ' .. get_namespace(full_name) .. ';';
+    inser_text(namespace)
+end
+
+SetPhpFileStart = function ()
+    local full_name = get_php_full_class_name()
+    local class_name = get_classname(full_name)
+    local namespace = get_namespace(full_name)
+
+    local text = {
+        "<?php",
+        "",
+        'namespace ' .. namespace .. ';',
+        "",
+        'class ' .. class_name,
+        '{',
+        "   public function __construct()",
+        "   {",
+        "   }",
+        '}',
+    }
+
+    vim.api.nvim_buf_set_lines(0, 0, 6, false, text)
 end

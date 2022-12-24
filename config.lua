@@ -7,11 +7,13 @@ lvim.plugins = {
         end
     },
     { "p00f/nvim-ts-rainbow" },
+    { "nvim-telescope/telescope-live-grep-args.nvim" },
     {
         "folke/trouble.nvim",
         cmd = "TroubleToggle",
     },
-    { "NTBBloodbath/rest.nvim" },
+    -- { "NTBBloodbath/rest.nvim" },
+    { "teto/rest.nvim" },
     { "christianchiarulli/nvcode-color-schemes.vim" },
     { "lukas-reineke/indent-blankline.nvim" },
     { "ray-x/lsp_signature.nvim" },
@@ -93,3 +95,17 @@ require("indent_blankline").setup {
     show_current_context_start = false,
 }
 require("lsp_signature").setup({})
+-- lvim.builtin.treesitter.matchup
+--
+--
+
+local MY_FQBN = "arduino:avr:nano"
+local lspconfig = require 'lspconfig'
+lspconfig.arduino_language_server.setup {
+  cmd = {
+    "arduino-language-server",
+        "-cli-config", "/home/andrei/.arduino15/arduino-cli.yaml",
+        "-fqbn",
+        MY_FQBN
+  },
+}

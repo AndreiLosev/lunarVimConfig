@@ -27,6 +27,10 @@ lvim.builtin.which_key.mappings['dt'] = {
 lvim.builtin.which_key.mappings["de"] = {
     "<cmd>:lua require'dapui'.eval()<CR>", "Eval"
 }
+
+lvim.builtin.which_key.mappings["sa"] = {
+    "<cmd>:lua require(\"telescope\").extensions.live_grep_args.live_grep_args()<CR>", "Text With rg args"
+}
 -- lvim.builtin.which_key.mappings["dd"] = {
 --     "<cmd>:require('dap').terminate()", "DapTerminate"
 -- }
@@ -40,11 +44,6 @@ lvim.builtin.which_key.mappings["r"] = {
 
 lvim.builtin.which_key.mappings["m"] = {
     name = "MergeTool",
-    l = { "<cmd>lua require('diffview.actions').conflict_choose('ours')<CR>", "Local" },
-    r = { "<cmd>lua require('diffview.actions').conflict_choose('theirs')<CR>", "Remote" },
-    b = { "<cmd>lua require('diffview.actions').conflict_choose('base')<CR>", "base" },
-    a = { "<cmd>lua require('diffview.actions').conflict_choose('all')<CR>", "All" },
-    n = { "<cmd>lua require('diffview.actions').conflict_choose('none')<CR>", "None" },
     c = { "<cmd> DiffviewClose <CR>", "DiffviewClose" },
     h = { "<cmd> DiffviewFileHistory % <CR>", "Current File History" },
     C = { ":vert diffsplit", "Сompare current file with ..." },
@@ -52,9 +51,10 @@ lvim.builtin.which_key.mappings["m"] = {
     O = { ": DiffviewOpen", "compare with {{ commit }}" },
 }
 
-lvim.builtin.which_key.mappings["sq"] = {
-    "<cmd>Telescope buffers<cr>", "search from buffers"
-}
 lvim.builtin.which_key.mappings["a"] = {
-    "<cmd>:lua GetPhpClassName()<CR>", "Get class name"
+    name = "Php specific",
+    s = { "<cmd>:lua SetPhpFileStart() <CR>", "Start php class" },
+    n = { "<cmd>:lua GetPhpNameSpace() <CR>", "insert namesapace" },
+    c = { "<cmd>:lua GetPhpClassName() <CR>", "inser class" },
 }
+

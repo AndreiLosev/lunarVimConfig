@@ -1,4 +1,5 @@
-lvim.builtin.telescope.on_config_done = function ()
+lvim.builtin.telescope.on_config_done = function (tele)
+    tele.load_extension("live_grep_args")
     local ok, actions = pcall(require, "telescope.actions")
     if not ok then
         return

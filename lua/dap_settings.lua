@@ -1,0 +1,92 @@
+local dap = require("dap")
+
+-- lvim.builtin.dap.breakpoint.text = ""
+ 
+dap.configurations.php = {
+    -- {
+    --     name = "Listen for Xdebug from lua",
+    --     type = "php",
+    --     request = "launch",
+    --     port = 9003
+    -- },
+    -- -- {
+    --     name = "hc-app",
+    --     type = "php",
+    --     request = "launch",
+    --     port = 9000,
+    --     pathMappings = {
+    --         ['/var/www'] = "${workspaceFolder}",
+    --     },
+    -- },
+    -- {
+    --     name = "hc-ticketing-back",
+    --     type = "php",
+    --     request = "launch",
+    --     port = 9003,
+    --     pathMappings = {
+    --         ["/src"] = "${workspaceFolder}/",
+    --     }
+    -- },
+    -- {
+    --     name = "langshop-Saas",
+    --     type = "php",
+    --     request = "launch",
+    --     port = 9000,
+    --     serverSourceRoot = '/var/www/html/v2',
+    --     localSourceRoot = '/home/andrei/prog/work/langshop-saas/www/v2/'
+    -- }
+}
+
+-- dap.configurations.rust = {
+--     {
+--         type = "lldb",
+--         request = "launch",
+--         name = "Debug executable 'web_soket'",
+--          program = function()
+--             return vim.fn.input('Path to bin', vim.fn.getcwd() .. '/target/debug/', 'file')
+--         end,
+--         args = {},
+--         cwd = "${workspaceFolder}"
+--     }
+-- }
+
+-- dap.configurations.cs = {
+--
+-- -- -- C# for remout attach !!!!
+--   {
+--     type = "coreclr",
+--     name = "attach remout asp",
+--     request = "attach",
+--     processId = 1,
+--     host = "172.17.0.1",
+--     executable = {
+--          command = "docker",
+--          args = {"exec", "-i", "dd_app_1", "/netcoredbg/netcoredbg", "--interpreter=vscode", "--server"}
+--     }
+--   },
+--
+-- -- -- C# for local launch !!!!
+--   {
+--     type = "coreclr",
+--     name = "launch local asp",
+--     request = "launch",
+--     program = function()
+--         return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+--     end,
+--   },
+-- }
+--
+--- Dart
+
+  -- dap.configurations.dart = {
+  --   {
+  --     type = "dart",
+  --     request = "launch",
+  --     name = "Launch Dart Program",
+  --     -- The nvim-dap plugin populates this variable with the filename of the current buffer
+  --     program = "${workspaceFolder}/bin/firs.dart",
+  --     -- The nvim-dap plugin populates this variable with the editor's current working directory
+  --     cwd = "${workspaceFolder}",
+  --     args = {"--help"}, -- Note for Dart apps this is args, for Flutter apps toolArgs
+  --   }
+  -- }

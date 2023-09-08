@@ -12,16 +12,9 @@ lvim.plugins = {
         "folke/trouble.nvim",
         cmd = "TroubleToggle",
     },
-    {
-        "loctvl842/monokai-pro.nvim",
-        config = function()
-            require("monokai-pro").setup()
-        end
-    },
     { "teto/rest.nvim" },
-    { "christianchiarulli/nvcode-color-schemes.vim" },
     { "lukas-reineke/indent-blankline.nvim" },
-    { "ray-x/lsp_signature.nvim" },
+    {"ray-x/lsp_signature.nvim"},
     { "APZelos/blamer.nvim" },
     {
         "sindrets/diffview.nvim",
@@ -43,13 +36,18 @@ lvim.plugins = {
           "stevearc/dressing.nvim",
         },
         config = function()
-          require("flutter_config").setup{}
+          require("flutter_config")
         end,
         ft = "dart",
       }
 }
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer", "omnisharp", "intelephense", "psalm" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {
+    "rust_analyzer",
+    "omnisharp",
+    -- "intelephense",
+    "psalm",
+})
 
 require("lualine1")
 require("settings")
@@ -62,8 +60,12 @@ require("null_ls_formatters")
 require("telescop1")
 require("php_class_name")
 require("nvim-web-devicons1")
-require "lsp_signature".setup()
-
+require("lsp_signature").setup({
+    bind = true,
+    floating_window = true,
+    max_height = 2,
+    max_width = 120,
+})
 -- require("indent_blankline").setup {
 --     show_current_context = true,
 --     show_current_context_start = false,

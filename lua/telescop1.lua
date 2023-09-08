@@ -14,16 +14,17 @@ lvim.builtin.telescope.on_config_done = function (tele)
                 -- previewer = false,
                 only_sort_text = true,
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.75, height = 0.95 }
+                layout_config = { width = 0.95, height = 0.95 }
             },
             live_grep = {
-                only_sort_text = true,
-                layout_strategy = 'horizontal',
-                layout_config = { width = 0.75, height = 0.95 },
+                -- only_sort_text = true,
+                -- layout_strategy = 'horizontal',
+                layout_config = { width = 0.95 },
+                theme = "dropdown",
             },
             buffers = {
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.75 },
+                layout_config = { width = 0.95 },
                 initial_mode = "normal",
                 mappings = {
                     i = {
@@ -42,7 +43,7 @@ lvim.builtin.telescope.on_config_done = function (tele)
                 -- previewer = false,
                 only_sort_text = true,
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.75 }
+                layout_config = { width = 0.95 }
             },
             lsp_references = {
               theme = "dropdown",
@@ -61,6 +62,14 @@ lvim.builtin.telescope.on_config_done = function (tele)
               initial_mode = "normal",
             },
         },
+        extensions = {
+            live_grep_args = {
+              auto_quoting = true, -- enable/disable auto-quoting
+              theme = "dropdown", -- use dropdown theme
+              theme = { }, -- use own theme spec
+              layout_config = { mirror=true }, -- mirror preview pane
+    }
+  }
     }
     require("telescope").setup(opts)
 end

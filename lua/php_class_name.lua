@@ -74,7 +74,7 @@ end
 GetPhpClassName = function ()
     local full_name = get_php_full_class_name();
     local class_name = get_classname(full_name);
-    inser_text(class_name)
+    inser_text(" " .. class_name)
 end
 
 GetPhpNameSpace = function ()

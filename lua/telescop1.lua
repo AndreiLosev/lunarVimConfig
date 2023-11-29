@@ -14,7 +14,7 @@ lvim.builtin.telescope.on_config_done = function (tele)
                 -- previewer = false,
                 only_sort_text = true,
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.95, height = 0.95 }
+                -- layout_config = { width = 0.95, height = 0.95 }
             },
             live_grep = {
                 -- only_sort_text = true,
@@ -24,7 +24,7 @@ lvim.builtin.telescope.on_config_done = function (tele)
             },
             buffers = {
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.95 },
+                layout_config = { width = 0.75 },
                 initial_mode = "normal",
                 mappings = {
                     i = {
@@ -43,7 +43,7 @@ lvim.builtin.telescope.on_config_done = function (tele)
                 -- previewer = false,
                 only_sort_text = true,
                 layout_strategy = 'horizontal',
-                layout_config = { width = 0.95 }
+                layout_config = { width = 0.75 }
             },
             lsp_references = {
               theme = "dropdown",
